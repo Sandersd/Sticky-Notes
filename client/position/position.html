@@ -1,0 +1,20 @@
+<template name ="position">
+	<div id= "{{_id}}" style="position:absolute;left:{{left}};top:{{top}};width:200px;" class="modal">
+		<div class="modal-header">
+			<a data-dismiss="modal" class="close">X</a>
+			{{#if editing_tablename}}
+				<input class="input input-medium tablename" value = "{{name}}" type="text"/>
+			{{else}}
+			<h5 class="tablename">{{name}}</h5>
+			{{/if}}
+		</div>
+		<div class="modal-body">
+			
+			<ul class="nav nav-pills nav-stacked">
+				{{#each dbfields}}
+					{{> dbfield}}
+				{{/each}}
+			</ul><span class="label label-success addfield centered">+</span>
+		</div>
+	</div>
+</template>
